@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localbin - Create Paste</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .options-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 5px;
+        }
+        .option-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .option-group label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-left: 2px;
+        }
+        .option-group input[type="password"] {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            color: var(--text-primary);
+            padding: 8px 12px;
+            outline: none;
+            font-size: 13px;
+        }
+        .option-group input:focus {
+            border-color: var(--accent-color);
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <a href="/" class="logo">Local<span>bin</span></a>
+            <div class="controls">
+                <a href="/donate.html" style="text-decoration: none;">
+                    <button class="secondary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.84-8.84 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        Donate
+                    </button>
+                </a>
+                <button onclick="createPaste()" id="submit-btn" style="min-width: 100px; justify-content: center;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                    Share
+                </button>
+            </div>
+        </header>
+
+        <div class="options-bar">
+            <div class="option-group">
+                <label>Language</label>
+                <select id="language">
+                    <option value="plaintext">Plain Text</option>
+                    <optgroup label="Common">
+                        <option value="javascript">JavaScript</option>
+                        <option value="typescript">TypeScript</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="csharp">C#</option>
+                        <option value="cpp">C++</option>
+                        <option value="php">PHP</option>
+                        <option value="go">Go</option>
+                        <option value="rust">Rust</option>
+                        <option value="swift">Swift</option>
+                        <option value="ruby">Ruby</option>
+                    </optgroup>
+                    <optgroup label="Web">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="scss">SCSS</option>
+                        <option value="json">JSON</option>
+                        <option value="graphql">GraphQL</option>
+                    </optgroup>
+                    <optgroup label="Data & Config">
+                        <option value="sql">SQL</option>
+                        <option value="yaml">YAML</option>
+                        <option value="markdown">Markdown</option>
+                        <option value="toml">TOML</option>
+                        <option value="xml">XML</option>
+                        <option value="csv">CSV</option>
+                    </optgroup>
+                    <optgroup label="System & Shell">
+                        <option value="bash">Bash</option>
+                        <option value="powershell">PowerShell</option>
+                        <option value="docker">Dockerfile</option>
+                        <option value="nginx">Nginx</option>
+                        <option value="makefile">Makefile</option>
+                        <option value="asm6502">Assembly</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option value="kotlin">Kotlin</option>
+                        <option value="lua">Lua</option>
+                        <option value="dart">Dart</option>
+                        <option value="r">R</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="option-group">
+                <label>Expiration</label>
+                <select id="expiration">
+                    <option value="never">Never</option>
+                    <option value="1">1 Hour</option>
+                    <option value="24">24 Hours</option>
+                    <option value="168">7 Days</option>
+                    <option value="720">30 Days</option>
+                </select>
+            </div>
+            <div class="option-group">
+                <label>Password (Optional)</label>
+                <input type="password" id="password" placeholder="Set password...">
+            </div>
+        </div>
+
+        <textarea id="code" placeholder="Paste your code here..." spellcheck="false"></textarea>
+
+        <footer>
+            By using Localbin, you agree to our <a href="/privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

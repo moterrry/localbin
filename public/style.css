@@ -1,0 +1,200 @@
+:root {
+    --bg-color: #0d1117;
+    --card-bg: #161b22;
+    --border-color: #30363d;
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+    --accent-color: #58a6ff;
+    --btn-bg: #238636;
+    --btn-hover: #2ea043;
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--text-primary);
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+select,
+textarea,
+.code-wrapper {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+select {
+    padding: 8px 12px;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+select:focus {
+    border-color: var(--accent-color);
+}
+
+textarea {
+    width: 100%;
+    height: 500px;
+    padding: 20px;
+    font-family: var(--font-mono);
+    resize: vertical;
+    outline: none;
+    line-height: 1.5;
+    transition: border-color 0.2s;
+}
+
+textarea:focus {
+    border-color: var(--accent-color);
+}
+
+button {
+    background: var(--btn-bg);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button:hover {
+    background: var(--btn-hover);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button.secondary {
+    background: #30363d;
+}
+
+button.secondary:hover {
+    background: #3d444d;
+}
+
+.code-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+pre {
+    margin: 0 !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+    font-family: var(--font-mono) !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    background: transparent !important;
+}
+
+code {
+    font-family: var(--font-mono) !important;
+}
+
+.meta {
+    font-size: 13px;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 15px;
+}
+
+/* Prism Overrides */
+pre[class*="language-"] {
+    background: var(--card-bg) !important;
+    text-shadow: none !important;
+}
+
+:not(pre)>code[class*="language-"],
+pre[class*="language-"] {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #484f58;
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

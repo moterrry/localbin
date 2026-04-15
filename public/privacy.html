@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localbin - Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .content {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 30px;
+            line-height: 1.8;
+        }
+        h2 {
+            color: var(--accent-color);
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <a href="/" class="logo">Local<span>bin</span></a>
+            <div class="controls">
+                <a href="/" style="text-decoration: none;">
+                    <button class="secondary">Back to App</button>
+                </a>
+            </div>
+        </header>
+
+        <div class="content">
+            <h1 style="font-size: 32px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; margin-bottom: 30px;">Privacy Policy</h1>
+            
+            <p>At <strong>Localbin</strong>, we believe that your code is your business. Our service is designed with a "Local First" and "Privacy First" philosophy.</p>
+
+            <h2>No Data Collection</h2>
+            <p>We do not collect, store, or sell a single piece of your personal data. There are no tracking cookies, no analytics scripts, and no user accounts.</p>
+
+            <h2>Local Storage</h2>
+            <p>All pastes you create are stored directly on the server host's filesystem. We do not use third-party databases or cloud storage providers. Your data remains exactly where you put it.</p>
+
+            <h2>Encryption & Security</h2>
+            <ul>
+                <li><strong>Password Protection:</strong> If you choose to password protect a paste, we hash it using <strong>bcrypt</strong> before it ever touches our storage. We never store plain-text passwords.</li>
+                <li><strong>Auto-Expiration:</strong> You have full control over how long your data exists. Once a paste expires, it is permanently deleted from the filesystem.</li>
+            </ul>
+
+            <h2>Transparency</h2>
+            <p>Localbin is a transparent tool. What you see is what you get. We don't hide any background processes. Your privacy isn't just a policy—it's how the tool is built.</p>
+        </div>
+
+        <footer style="margin-top: 40px; text-align: center; color: var(--text-secondary); font-size: 13px;">
+            &copy; 2026 Localbin. Built for developers, by developers.
+        </footer>
+    </div>
+
+</body>
+</html>
